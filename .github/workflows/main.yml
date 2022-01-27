@@ -19,6 +19,7 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
+  
   steps:
     - name: Checkmarx AST Github Action
       uses: Checkmarx/ast-github-action@2.0.0
