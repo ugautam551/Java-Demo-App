@@ -20,22 +20,22 @@ jobs:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
   
-  steps:
-    - name: Checkmarx AST Github Action
+    steps:
+      - name: Checkmarx AST Github Action
       uses: Checkmarx/ast-github-action@2.0.0
       with:
-      base_uri: https://eu.ast.checkmarx.net/
-      cx_tenant: nfr_inflow
-      cx_client_id: github
-      cx_client_secret: 56cc02b4-ebce-4590-9a49-ea43fd00f261
+        base_uri: https://eu.ast.checkmarx.net/
+        cx_tenant: nfr_inflow
+        cx_client_id: github
+        cx_client_secret: 56cc02b4-ebce-4590-9a49-ea43fd00f261
    
-      project_name: ${{ github.repository }}
+        project_name: ${{ github.repository }}
    
-      branch: ${{ github.ref }}
+        branch: ${{ github.ref }}
    
-      github_token: ${{ github.token }}
+        github_token: ${{ github.token }}
    
-      additional_params: --file-filter !readme --report-format sarif --output-name results
+        additional_params: --file-filter !readme --report-format sarif --output-name results
    
     - name: Upload SARIF file
       uses: github/codeql-action/upload-sarif@v1
